@@ -125,7 +125,8 @@ const HeatMap = () => {
                       .attr("height", 3 * lineHeight + (2 * padding))
                       .attr("y", 0);
             tooltip.style('visibility', 'visible')
-                   .attr('transform', `translate(${xScale(d.year+10)}, ${yScale(d.month)})`);
+                   .attr('transform', `translate(${xScale(d.year+10)}, ${yScale(d.month)})`)
+                   .attr("data-year", d.year);
             d3.select(event.currentTarget).style('stroke', 'red').style('stroke-width', '2');
             event.preventDefault();
         })
